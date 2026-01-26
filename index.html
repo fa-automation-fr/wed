@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Camille & Frank – Mariage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camille & Frank — Mariage</title>
+  <meta name="description" content="Camille & Frank se marient. Plus d'informations arrivent très bientôt." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --bg: #fbfaf8;
+      --card: rgba(255,255,255,.72);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: rgba(31,41,55,.12);
+      --shadow: 0 20px 60px rgba(31,41,55,.12);
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 20%, rgba(31,41,55,.06), transparent 60%),
+        radial-gradient(900px 600px at 85% 80%, rgba(31,41,55,.05), transparent 55%),
+        var(--bg);
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 32px 16px;
+    }
+
+    .card{
+      width:min(820px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(28px, 4vw, 44px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .kicker{
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 10px 0;
+    }
+
+    h1{
+      margin: 0 0 10px 0;
+      font-weight: 600;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.05;
+    }
+
+    .subtitle{
+      margin: 0 0 26px 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    .divider{
+      height: 1px;
+      background: var(--border);
+      margin: 26px 0;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size: 14px;
+      color: var(--text);
+      background: rgba(255,255,255,.55);
+    }
+
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(31,41,55,.35);
+      box-shadow: 0 0 0 4px rgba(31,41,55,.06);
+    }
+
+    footer{
+      margin-top: 22px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    a{ color: inherit; }
+  </style>
 </head>
+
 <body>
-  <h1>Camille & Frank</h1>
-  <p>On se marie 🎉</p>
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Page d'attente mariage">
+      <p class="kicker">Camille & Frank</p>
+      <h1>On se marie 💍</h1>
+      <p class="subtitle">
+        Merci de passer par ici ! Nous préparons les informations pratiques
+        (date, lieu, programme, RSVP…). Elles arrivent très bientôt.
+      </p>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="pill" aria-label="Statut des informations">
+        <span class="dot" aria-hidden="true"></span>
+        <span><strong>Plus d’informations arrivent</strong> — revenez dans quelques jours ✨</span>
+      </div>
+
+      <footer>
+        <span>mariage.camilleetfrankalbrecht.fr</span>
+        <span>© <span id="year"></span> Camille & Frank</span>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
