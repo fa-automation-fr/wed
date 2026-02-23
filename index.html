@@ -3,229 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Frank & Camille — 12-14 Juin 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+:root {
+  --bg-light: #f6f3ef;
+  --bg-white: #ffffff;
+  --text-dark: #111;
+  --text-soft: #555;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #222;
-    background: #fff;
-    line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  line-height: 1.6;
 }
 
 section {
-    padding: 120px 20px;
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
+  padding: 120px 10%;
 }
 
-h1, h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
-
-h1 {
-    font-size: 64px;
-    letter-spacing: 4px;
-}
-
-h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* HERO */
 
 .hero {
-    height: 100vh;
-    background: url("https://images.unsplash.com/photo-1529634898209-1fdc2b6f62f2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-light);
 }
 
-.hero-overlay {
-    background: rgba(0,0,0,0.35);
-    padding: 60px;
+.hero-left {
+  max-width: 45%;
 }
 
-.hero h1 {
-    font-size: 70px;
+.hero-left h1 {
+  font-size: 5rem;
+  margin: 20px 0;
 }
 
-.hero p {
-    font-size: 22px;
-    letter-spacing: 2px;
-    margin-top: 20px;
+.hero-left p.small {
+  font-size: 1rem;
+  color: var(--text-soft);
 }
 
-/* Divider */
-
-.divider {
-    width: 80px;
-    height: 1px;
-    background: #222;
-    margin: 40px auto;
+.btn-outline {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  border: 1px solid #111;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.3s ease;
 }
 
-/* Event details */
-
-.event-block {
-    margin-bottom: 60px;
+.btn-outline:hover {
+  background: #111;
+  color: white;
 }
 
-/* Gallery */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 20px;
+.hero img {
+  width: 50%;
+  height: 600px;
+  object-fit: cover;
 }
 
-.gallery img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
+.bg-white {
+  background: var(--bg-white);
 }
 
-/* RSVP Button */
-
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 40px;
-    border: 1px solid #222;
-    text-decoration: none;
-    color: #222;
-    transition: 0.3s ease;
+.program {
+  display: flex;
+  gap: 100px;
 }
 
-.button:hover {
-    background: #222;
-    color: white;
+.program-left {
+  flex: 1;
 }
 
-/* Footer */
+.program-right {
+  flex: 1;
+}
+
+.program-item {
+  margin-bottom: 60px;
+}
+
+.program-item span {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--text-soft);
+}
+
+.program-item h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.quote {
+  text-align: center;
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.faq-item h4 {
+  font-weight: 500;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: var(--text-soft);
+  margin-top: 10px;
+}
 
 footer {
-    padding: 60px 20px;
-    text-align: center;
-    font-size: 14px;
-    background: #f7f7f7;
+  background: var(--bg-light);
+  padding: 80px 10%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* Responsive */
-
-@media(max-width:768px){
-    h1 { font-size: 44px; }
-    h2 { font-size: 28px; }
-    section { padding: 80px 20px; }
+footer h3 {
+  margin-bottom: 20px;
 }
+
+footer p {
+  color: var(--text-soft);
+}
+
+@media(max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-left, .hero img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .program {
+    flex-direction: column;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<div class="hero">
-    <div class="hero-overlay">
-        <h1>Frank & Camille</h1>
-        <p>12 – 14 Juin 2026 · Goudargues, Provence</p>
-    </div>
-</div>
-
-<!-- OUR STORY -->
-<section>
-    <h2>Notre Histoire</h2>
-    <div class="divider"></div>
-    <p>
-        Après des années d’aventure, de projets et de souvenirs partagés,
-        nous avons décidé de célébrer notre union entourés des personnes
-        qui comptent le plus pour nous.
+<section class="hero">
+  <div class="hero-left">
+    <p>Nous allons nous marier</p>
+    <h1>Frank & Camille</h1>
+    <p class="small">
+      12 – 14 juin 2026<br>
+      Goudargues, Provence
     </p>
-    <p>
-        Nous avons choisi la Provence et le village de Goudargues
-        pour sa lumière, sa douceur et son charme intemporel.
-    </p>
+    <a href="#rsvp" class="btn-outline">RÉPONDRE</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1529636798458-92182e662485" alt="Couple">
 </section>
 
-<!-- EVENT DETAILS -->
-<section>
-    <h2>Le Programme</h2>
-    <div class="divider"></div>
-
-    <div class="event-block">
-        <h3>Vendredi 12 Juin</h3>
-        <p>Accueil des invités & dîner informel</p>
+<!-- PROGRAMME -->
+<section class="bg-white">
+  <div class="program">
+    <div class="program-left">
+      <h2>Célébrer notre amour<br>avec ceux que nous aimons</h2>
     </div>
 
-    <div class="event-block">
-        <h3>Samedi 13 Juin</h3>
-        <p>Cérémonie · Vin d’honneur · Dîner · Soirée</p>
+    <div class="program-right">
+      <div class="program-item">
+        <span>01.</span>
+        <h3>Cérémonie</h3>
+        <p>Samedi 13 juin — 16h<br>
+        Domaine en Provence</p>
+      </div>
+
+      <div class="program-item">
+        <span>02.</span>
+        <h3>Réception</h3>
+        <p>Samedi 13 juin — 18h<br>
+        Cocktail & dîner sous les oliviers</p>
+      </div>
+
+      <div class="program-item">
+        <span>03.</span>
+        <h3>Brunch</h3>
+        <p>Dimanche 14 juin — 11h<br>
+        Pool party & déjeuner convivial</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="event-block">
-        <h3>Dimanche 14 Juin</h3>
-        <p>Brunch & au revoir</p>
+<!-- CITATION -->
+<section>
+  <div class="quote">
+    « Pour le monde, vous êtes une personne,<br>
+    mais pour une personne, vous êtes le monde. »
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-white">
+  <h2>Questions fréquentes</h2>
+
+  <div class="faq-item">
+    <h4>Quel est le dress code ?</h4>
+    <div class="faq-content">
+      Tenue élégante estivale. Évitez les talons fins (pelouse).
     </div>
-</section>
+  </div>
 
-<!-- LOCATION -->
-<section>
-    <h2>Lieu</h2>
-    <div class="divider"></div>
-    <p>
-        Goudargues, Provence<br>
-        (Adresse complète à venir)
-    </p>
-
-    <a href="https://maps.google.com/?q=Goudargues" target="_blank" class="button">
-        Voir sur Google Maps
-    </a>
-</section>
-
-<!-- GALLERY -->
-<section>
-    <h2>Galerie</h2>
-    <div class="divider"></div>
-
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1482482097755-0b595893ba63?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c42?auto=format&fit=crop&w=1200&q=80">
+  <div class="faq-item">
+    <h4>Y a-t-il un parking ?</h4>
+    <div class="faq-content">
+      Oui, un parking est disponible à proximité du domaine.
     </div>
+  </div>
+
+  <div class="faq-item">
+    <h4>Pouvons-nous venir avec des enfants ?</h4>
+    <div class="faq-content">
+      Le mariage sera réservé aux adultes.
+    </div>
+  </div>
+
 </section>
 
-<!-- RSVP -->
-<section>
-    <h2>RSVP</h2>
-    <div class="divider"></div>
-    <p>
-        Merci de confirmer votre présence avant le 1er avril 2026.
-    </p>
-
-    <a href="#" class="button">Confirmer ma présence</a>
-</section>
-
+<!-- FOOTER -->
 <footer>
-    Frank & Camille · Juin 2026 · Provence
+  <div>
+    <h3>Contact</h3>
+    <p>Frank : 06 00 00 00 00</p>
+    <p>Camille : 06 00 00 00 01</p>
+  </div>
+
+  <div>
+    <p>Notre histoire</p>
+    <p>Voyage et séjour</p>
+    <p>Registre</p>
+    <p>FAQ</p>
+  </div>
 </footer>
+
+<script>
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const content = item.querySelector(".faq-content");
+    content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+  });
+});
+</script>
 
 </body>
 </html>
