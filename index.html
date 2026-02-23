@@ -1,146 +1,874 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Camille & Frank — Mariage</title>
-  <meta name="description" content="Camille & Frank se marient. Plus d'informations arrivent très bientôt." />
-  <meta name="robots" content="index,follow" />
+  <title>Frank & Camille — Mariage à Goudargues (12–14 juin 2026)</title>
+  <meta name="description" content="Frank & Camille se marient à Goudargues (Provence) du 12 au 14 juin 2026. Infos, programme, lieu, RSVP." />
+
+  <!-- Open Graph (partage) -->
+  <meta property="og:title" content="Frank & Camille — Mariage (12–14 juin 2026)" />
+  <meta property="og:description" content="Goudargues, Provence — Programme, lieu, RSVP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1523438097201-512ae7d59c42?auto=format&fit=crop&w=1600&q=80" />
+
+  <!-- Polices (optionnel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,500,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg: #fbfaf8;
       --card: rgba(255,255,255,.72);
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: rgba(31,41,55,.12);
-      --shadow: 0 20px 60px rgba(31,41,55,.12);
+      --text: #1f2328;
+      --muted: #5b636d;
+      --line: rgba(31,35,40,.12);
+      --accent: #8a6f5a;     /* terracotta doux */
+      --accent2:#2f5d50;     /* vert profond */
+      --shadow: 0 20px 50px rgba(0,0,0,.10);
+      --radius: 22px;
+      --max: 1120px;
     }
 
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      color: var(--text);
+      color:var(--text);
       background:
-        radial-gradient(900px 600px at 15% 20%, rgba(31,41,55,.06), transparent 60%),
-        radial-gradient(900px 600px at 85% 80%, rgba(31,41,55,.05), transparent 55%),
+        radial-gradient(1000px 600px at 10% -10%, rgba(138,111,90,.15), transparent 55%),
+        radial-gradient(900px 650px at 90% 0%, rgba(47,93,80,.12), transparent 50%),
         var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
 
-    .wrap{
-      min-height:100%;
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251,250,248,.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
       display:flex;
       align-items:center;
-      justify-content:center;
-      padding: 32px 16px;
+      justify-content:space-between;
+      gap:16px;
     }
-
-    .card{
-      width:min(820px, 100%);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: clamp(28px, 4vw, 44px);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
     }
-
-    .kicker{
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    .brand .names{
+      font-family: Fraunces, serif;
+      font-weight: 600;
+      letter-spacing:.2px;
+      font-size: 18px;
+      line-height:1;
+    }
+    .brand .date{
       font-size: 12px;
       color: var(--muted);
-      margin: 0 0 10px 0;
+      letter-spacing:.2px;
     }
-
-    h1{
-      margin: 0 0 10px 0;
-      font-weight: 600;
-      font-size: clamp(36px, 5vw, 56px);
-      line-height: 1.05;
+    nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap: 14px;
+      align-items:center;
     }
-
-    .subtitle{
-      margin: 0 0 26px 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    nav a{
+      text-decoration:none;
+      font-size: 14px;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 62ch;
+      padding: 10px 10px;
+      border-radius: 999px;
+      transition: all .2s ease;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(0,0,0,.04);
     }
 
-    .divider{
-      height: 1px;
-      background: var(--border);
-      margin: 26px 0;
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
     }
-
-    .pill{
+    .btn{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:10px;
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      text-decoration:none;
       font-size: 14px;
       color: var(--text);
-      background: rgba(255,255,255,.55);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.9);}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(138,111,90,.95), rgba(47,93,80,.92));
+      color: #fff;
+      border-color: transparent;
+    }
+    .btn.primary:hover{filter: brightness(1.03);}
+
+    /* Mobile nav */
+    .menu-btn{display:none}
+    @media (max-width: 900px){
+      nav ul{display:none}
+      .menu-btn{display:inline-flex}
     }
 
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(31,41,55,.35);
-      box-shadow: 0 0 0 4px rgba(31,41,55,.06);
+    /* Layout helpers */
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    section{padding: 70px 0}
+    .kicker{
+      color: var(--accent2);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    h1,h2,h3{margin:0}
+    h2{
+      font-family: Fraunces, serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 600;
+      letter-spacing:.2px;
+      margin-top: 10px;
+    }
+    .sub{
+      color: var(--muted);
+      max-width: 70ch;
+      margin-top: 12px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .grid{
+      display:grid;
+      gap: 18px;
+    }
+    .grid.two{grid-template-columns: 1.1fr .9fr;}
+    .grid.three{grid-template-columns: repeat(3, 1fr);}
+    @media (max-width: 900px){
+      .grid.two, .grid.three{grid-template-columns: 1fr;}
+      section{padding: 56px 0}
     }
 
-    footer{
-      margin-top: 22px;
+    /* Hero */
+    .hero{
+      padding: 28px 0 60px;
+    }
+    .hero-wrap{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero-wrap{grid-template-columns:1fr}
+    }
+    .hero-card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.62);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-media{
+      min-height: 480px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      position:relative;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.15)),
+        url("https://images.unsplash.com/photo-1529634898209-1fdc2b6f62f2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(700px 350px at 30% 20%, rgba(255,255,255,.12), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-content{
+      padding: 28px 26px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 16px;
+    }
+    .hero-title{
+      font-family: Fraunces, serif;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.05;
+      letter-spacing: .3px;
+    }
+    .hero-title span{
+      display:inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip:text;
+      color: transparent;
+    }
+    .hero-meta{
       display:flex;
       gap: 10px;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
       align-items:center;
-      justify-content: space-between;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
+    }
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .countdown{
+      margin-top: 10px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .timebox{
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      padding: 12px 10px;
+      text-align:center;
+    }
+    .timebox .num{
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .timebox .lbl{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
     }
 
-    a{ color: inherit; }
+    /* Cards */
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 14px 40px rgba(0,0,0,.07);
+      padding: 22px;
+    }
+    .card h3{
+      font-family: Fraunces, serif;
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .list{
+      margin: 14px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .li{
+      display:flex;
+      gap: 12px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.58);
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      margin-top: 6px;
+      flex: 0 0 auto;
+    }
+    .li b{color: var(--text)}
+    .li span{color: var(--muted)}
+
+    /* Timeline */
+    .timeline{
+      display:grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .event{
+      display:grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      align-items:start;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.60);
+    }
+    .event .when{
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      padding-top: 4px;
+    }
+    .event .what b{display:block; margin-bottom: 3px;}
+    .event .what small{color: var(--muted); line-height: 1.5; display:block;}
+    @media (max-width: 520px){
+      .event{grid-template-columns:1fr}
+      .countdown{grid-template-columns: repeat(2, 1fr);}
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .gallery .big{
+      min-height: 420px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+    .gallery .small{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .shot{
+      min-height: 200px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background-size: cover;
+      background-position: center;
+    }
+    .shot.s1{background-image:url("https://images.unsplash.com/photo-1529516544814-64d1bce7b9f5?auto=format&fit=crop&w=1200&q=80")}
+    .shot.s2{background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80")}
+    .shot.s3{background-image:url("https://images.unsplash.com/photo-1482482097755-0b595893ba63?auto=format&fit=crop&w=1200&q=80")}
+    .shot.s4{background-image:url("https://images.unsplash.com/photo-1523438097201-512ae7d59c42?auto=format&fit=crop&w=1200&q=80")}
+    @media (max-width: 900px){
+      .gallery{grid-template-columns:1fr}
+      .gallery .big{min-height: 320px}
+    }
+
+    /* Footer */
+    footer{
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    footer .foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .tiny{font-size: 12px; color: var(--muted)}
+    .sep{opacity:.45}
+
+    /* Modal (mobile menu) */
+    .modal{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.35);
+      display:none;
+      z-index: 100;
+      padding: 18px;
+    }
+    .modal.open{display:block}
+    .sheet{
+      max-width: 560px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      backdrop-filter: blur(10px);
+    }
+    .sheet-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      padding: 4px 6px 10px;
+    }
+    .sheet ul{
+      list-style:none; margin: 0; padding: 0;
+      display:grid; gap: 8px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      text-decoration:none;
+      color: var(--text);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.92);}
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card" role="region" aria-label="Page d'attente mariage">
-      <p class="kicker">Camille & Frank</p>
-      <h1>On se marie en Provence 🪻</h1>
-      <p class="subtitle">
-        Nous préparons les informations pratiques
-        (date, lieu, programme, RSVP…). Elles arrivent très bientôt.
-      </p>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top">
+        <div class="names">Frank <span class="sep">•</span> Camille</div>
+        <div class="date">12–14 juin 2026 · Goudargues</div>
+      </a>
 
-      <div class="divider" aria-hidden="true"></div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#notre-histoire">Notre histoire</a></li>
+          <li><a href="#programme">Programme</a></li>
+          <li><a href="#lieu">Lieu</a></li>
+          <li><a href="#infos">Infos</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+      </nav>
 
-      <div class="pill" aria-label="Statut des informations">
-        <span class="dot" aria-hidden="true"></span>
-        <span><strong>Plus d’informations arrivent</strong> — revenez dans quelques jours ✨</span>
+      <div class="cta">
+        <a class="btn" href="#rsvp">RSVP</a>
+        <a class="btn primary" href="#programme">Voir le programme</a>
+        <button class="btn menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu">Menu</button>
       </div>
+    </div>
+  </header>
 
-      <footer>
-        <span>mariage.camilleetfrankalbrecht.fr</span>
-        <span>© <span id="year"></span> Camille & Frank</span>
-      </footer>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="kicker">On se marie</div>
+            <h1 class="hero-title">
+              Frank <span>&</span> Camille
+            </h1>
+
+            <p class="sub">
+              On a hâte de vous retrouver en <b>Provence</b> pour un week-end de fête, de soleil
+              (on croise les doigts) et de bons moments.
+            </p>
+
+            <div class="hero-meta">
+              <div class="pill">📅 <b>12–14 juin 2026</b></div>
+              <div class="pill">📍 <b>Goudargues</b> · Provence</div>
+            </div>
+
+            <div class="countdown" aria-label="Compte à rebours">
+              <div class="timebox"><div class="num" id="dd">—</div><div class="lbl">jours</div></div>
+              <div class="timebox"><div class="num" id="hh">—</div><div class="lbl">heures</div></div>
+              <div class="timebox"><div class="num" id="mm">—</div><div class="lbl">minutes</div></div>
+              <div class="timebox"><div class="num" id="ss">—</div><div class="lbl">secondes</div></div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#rsvp">Confirmer sa présence</a>
+              <a class="btn" href="#lieu">Voir le lieu</a>
+              <a class="btn" href="#infos">Infos pratiques</a>
+            </div>
+
+            <div class="tiny">
+              Astuce : remplace les photos (Unsplash) par les vôtres dès que tu es prêt.
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media" role="img" aria-label="Photo de couverture du mariage"></div>
+      </div>
     </section>
+
+    <!-- NOTRE HISTOIRE -->
+    <section id="notre-histoire">
+      <div class="container">
+        <div class="grid two">
+          <div>
+            <div class="kicker">Notre histoire</div>
+            <h2>Quelques mots, simplement</h2>
+            <p class="sub">
+              Ici, vous pouvez raconter en 5–10 lignes votre rencontre, votre parcours,
+              et pourquoi vous avez choisi Goudargues.
+              Gardez ça court, chaleureux, et très “vous”.
+            </p>
+
+            <ul class="list">
+              <li class="li"><span class="dot"></span><div><b>Le début</b> <span>— une rencontre (ou une évidence)</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Le moment déclic</b> <span>— un voyage, un projet, un fou rire…</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Le “oui”</b> <span>— et maintenant, place à la fête !</span></div></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>En bref</h3>
+            <p>
+              <b>Dates :</b> 12–14 juin 2026<br/>
+              <b>Ville :</b> Goudargues (Provence)<br/>
+              <b>Format :</b> week-end (cérémonie + soirée + brunch)
+            </p>
+            <ul class="list" style="margin-top:14px;">
+              <li class="li"><span class="dot"></span><div><b>Dress code</b><br/><span>À préciser (ex : chic & léger, couleurs estivales).</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Enfants</b><br/><span>À préciser selon votre choix.</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Contact</b><br/><span>Ajoutez une adresse email ou WhatsApp (ci-dessous).</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section id="programme">
+      <div class="container">
+        <div class="kicker">Programme</div>
+        <h2>Le week-end du 12 au 14 juin</h2>
+        <p class="sub">
+          Voici une structure classique (à ajuster avec vos horaires exacts).
+          Vous pouvez aussi ajouter des infos “navettes”, “parking”, etc.
+        </p>
+
+        <div class="grid three" style="margin-top:18px;">
+          <div class="card">
+            <h3>Vendredi 12</h3>
+            <div class="timeline">
+              <div class="event">
+                <div class="when">Fin d’aprem</div>
+                <div class="what">
+                  <b>Arrivées & installation</b>
+                  <small>Check-in, accueil, premières retrouvailles.</small>
+                </div>
+              </div>
+              <div class="event">
+                <div class="when">Soir</div>
+                <div class="what">
+                  <b>Dîner libre / Apéro</b>
+                  <small>On vous partage nos adresses et idées.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Samedi 13</h3>
+            <div class="timeline">
+              <div class="event">
+                <div class="when">Après-midi</div>
+                <div class="what">
+                  <b>Cérémonie</b>
+                  <small>Lieu & horaire à confirmer.</small>
+                </div>
+              </div>
+              <div class="event">
+                <div class="when">Soir</div>
+                <div class="what">
+                  <b>Vin d’honneur & Soirée</b>
+                  <small>Repas, discours, dancefloor.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Dimanche 14</h3>
+            <div class="timeline">
+              <div class="event">
+                <div class="when">Fin de matinée</div>
+                <div class="what">
+                  <b>Brunch</b>
+                  <small>Pour se raconter la veille et prolonger.</small>
+                </div>
+              </div>
+              <div class="event">
+                <div class="when">Après-midi</div>
+                <div class="what">
+                  <b>Départs</b>
+                  <small>Bisous, derniers cafés, et à très vite.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIEU -->
+    <section id="lieu">
+      <div class="container">
+        <div class="grid two">
+          <div>
+            <div class="kicker">Le lieu</div>
+            <h2>Goudargues, la “Venise Gardoise”</h2>
+            <p class="sub">
+              Ajoutez ici une petite description (pourquoi ce lieu, l’ambiance, ce qu’on aime).
+              Vous pouvez aussi lister les villages proches / points d’intérêt.
+            </p>
+
+            <div class="card" style="margin-top:18px;">
+              <h3>Adresse (à compléter)</h3>
+              <p>
+                <b>Lieu de cérémonie / réception :</b><br/>
+                Nom du domaine / salle<br/>
+                Adresse complète<br/>
+                30630 Goudargues, France
+              </p>
+              <div class="hero-actions" style="margin-top:14px;">
+                <!-- Remplace le lien Google Maps ci-dessous -->
+                <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Goudargues">
+                  Ouvrir dans Google Maps
+                </a>
+                <a class="btn" href="#infos">Accès & hébergements</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Quelques photos</h3>
+            <p>Tu peux remplacer cette galerie par vos photos (ou celles du lieu).</p>
+
+            <div class="gallery">
+              <div class="big" aria-label="Photo large"></div>
+              <div class="small">
+                <div class="shot s1" aria-label="Photo 1"></div>
+                <div class="shot s2" aria-label="Photo 2"></div>
+                <div class="shot s3" aria-label="Photo 3"></div>
+                <div class="shot s4" aria-label="Photo 4"></div>
+              </div>
+            </div>
+
+            <p class="tiny" style="margin-top:12px;">
+              Remplacement : cherche “background-image:” dans le code et mets tes URLs (ou un dossier <code>/assets</code>).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFOS -->
+    <section id="infos">
+      <div class="container">
+        <div class="kicker">Infos pratiques</div>
+        <h2>Tout ce qu’il faut savoir</h2>
+        <p class="sub">
+          Mets ici les infos concrètes : comment venir, où dormir, quoi prévoir.
+          Plus c’est simple, plus c’est utile.
+        </p>
+
+        <div class="grid three" style="margin-top:18px;">
+          <div class="card">
+            <h3>Se rendre à Goudargues</h3>
+            <ul class="list">
+              <li class="li"><span class="dot"></span><div><b>En voiture</b><br/><span>Ajoute les temps depuis Paris/Lyon/Marseille.</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>En train</b><br/><span>Gare(s) conseillées + trajet voiture ensuite.</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>En avion</b><br/><span>Aéroport(s) proches + location voiture.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Hébergements</h3>
+            <p>
+              Ajoute ici une liste courte + liens (Airbnb, hôtels, gîtes).
+              Idéalement : 3–6 options à différents budgets.
+            </p>
+            <ul class="list">
+              <li class="li"><span class="dot"></span><div><b>Option 1</b><br/><span>Nom + distance + lien</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Option 2</b><br/><span>Nom + distance + lien</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Option 3</b><br/><span>Nom + distance + lien</span></div></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>À prévoir</h3>
+            <ul class="list">
+              <li class="li"><span class="dot"></span><div><b>Météo</b><br/><span>Juin en Provence : chaud le jour, frais le soir.</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Chaussures</b><br/><span>Selon le lieu : herbe, graviers, pavés…</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Transport</b><br/><span>Si navettes/covoiturage, explique ici.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <div class="container">
+        <div class="grid two">
+          <div class="card">
+            <div class="kicker">RSVP</div>
+            <h2>Confirmer votre présence</h2>
+            <p class="sub">
+              Ici tu as 2 options simples :
+              <br/>1) un lien vers un Google Form / Typeform
+              <br/>2) un email dédié.
+            </p>
+
+            <div class="hero-actions" style="margin-top:16px;">
+              <!-- Remplace ce lien par ton formulaire -->
+              <a class="btn primary" target="_blank" rel="noopener" href="https://forms.gle/">
+                Ouvrir le formulaire RSVP
+              </a>
+
+              <!-- Remplace l'email -->
+              <a class="btn" href="mailto:rsvp@votredomaine.fr?subject=RSVP%20-%20Mariage%20Frank%20%26%20Camille">
+                Écrire par email
+              </a>
+            </div>
+
+            <p class="tiny" style="margin-top:12px;">
+              Pense à ajouter une <b>date limite</b> (ex : “merci de répondre avant le 1er avril 2026”).
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Liste / Cadeaux</h3>
+            <p>
+              Si vous avez une liste, une cagnotte, ou juste un message “votre présence suffit”,
+              c’est le bon endroit.
+            </p>
+
+            <ul class="list" style="margin-top:14px;">
+              <li class="li"><span class="dot"></span><div><b>Option</b><br/><span>Lien vers une liste (si vous en avez une).</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Option</b><br/><span>Une cagnotte voyage / projet (si vous préférez).</span></div></li>
+              <li class="li"><span class="dot"></span><div><b>Message</b><br/><span>“Votre présence est notre plus beau cadeau.”</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <footer>
+    <div class="container foot">
+      <div>
+        <b>Frank & Camille</b> <span class="sep">·</span> <span>12–14 juin 2026</span> <span class="sep">·</span> <span>Goudargues</span>
+        <div class="tiny" style="margin-top:6px;">
+          Site statique (GitHub Pages). Modifie librement le texte, les photos et les liens.
+        </div>
+      </div>
+      <div class="tiny">
+        <a href="#top">Retour en haut</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu modal -->
+  <div class="modal" id="menuModal" aria-hidden="true">
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="sheet-head">
+        <div class="names" style="font-family:Fraunces,serif;font-weight:600;">Frank & Camille</div>
+        <button class="btn" id="closeMenu" type="button">Fermer</button>
+      </div>
+      <ul>
+        <li><a href="#notre-histoire" class="mLink">Notre histoire</a></li>
+        <li><a href="#programme" class="mLink">Programme</a></li>
+        <li><a href="#lieu" class="mLink">Lieu</a></li>
+        <li><a href="#infos" class="mLink">Infos</a></li>
+        <li><a href="#rsvp" class="mLink">RSVP</a></li>
+      </ul>
+    </div>
+  </div>
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // === Countdown (vers le début du week-end : 12 juin 2026 15:00 Europe/Paris approx) ===
+    // GitHub Pages = site statique => on utilise l'heure du navigateur.
+    // Tu peux ajuster l'heure si tu veux (ex 14:00).
+    const target = new Date("2026-06-12T15:00:00+02:00").getTime();
+
+    const $dd = document.getElementById("dd");
+    const $hh = document.getElementById("hh");
+    const $mm = document.getElementById("mm");
+    const $ss = document.getElementById("ss");
+
+    function pad(n){ return String(n).padStart(2, "0"); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+
+      const d = Math.floor(diff / (1000*60*60*24));
+      diff -= d * (1000*60*60*24);
+      const h = Math.floor(diff / (1000*60*60));
+      diff -= h * (1000*60*60);
+      const m = Math.floor(diff / (1000*60));
+      diff -= m * (1000*60);
+      const s = Math.floor(diff / 1000);
+
+      $dd.textContent = d;
+      $hh.textContent = pad(h);
+      $mm.textContent = pad(m);
+      $ss.textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // === Mobile menu ===
+    const modal = document.getElementById("menuModal");
+    const openBtn = document.getElementById("openMenu");
+    const closeBtn = document.getElementById("closeMenu");
+    const links = document.querySelectorAll(".mLink");
+
+    function openMenu(){
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMenu(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    openBtn?.addEventListener("click", openMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeMenu();
+    });
+    links.forEach(a => a.addEventListener("click", closeMenu));
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && modal.classList.contains("open")) closeMenu();
+    });
   </script>
 </body>
 </html>
